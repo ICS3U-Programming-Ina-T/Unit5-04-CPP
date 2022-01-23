@@ -21,12 +21,10 @@ double calculate(char sign, float firstNum, float secondNum) {
         result = firstNum / secondNum;
     } else if (sign == '*') {
         result = firstNum * secondNum;
-    } else if (sign == '+') {
-        result = firstNum + secondNum;
     } else if (sign == '-') {
         result = firstNum - secondNum;
     } else {
-        return -1;
+        result = firstNum + secondNum;
     }
 
     return result;
@@ -72,17 +70,13 @@ int main() {
                 resultUser = calculate(signUser, firstNumFloat, secondNumFloat);
 
                 // displays results to user
-                if (calculate(signUser, firstNumFloat, secondNumFloat) == -1) {
-                    std::cout << "Invalid input!";
-                } else {
-                    std::cout << std::endl;
-                    std::cout << "The result of " << std::fixed;
-                    std::cout << std::setprecision(2) << firstNumFloat << " ";
-                    std::cout << signUser << " " << std::fixed;
-                    std::cout << std::setprecision(2) << secondNumFloat;
-                    std::cout << " is " <<  std::fixed << std::setprecision(2);
-                    std::cout << resultUser;
-                }
+                std::cout << std::endl;
+                std::cout << "The result of " << std::fixed;
+                std::cout << std::setprecision(2) << firstNumFloat << " ";
+                std::cout << signUser << " " << std::fixed;
+                std::cout << std::setprecision(2) << secondNumFloat;
+                std::cout << " is " <<  std::fixed << std::setprecision(2);
+                std::cout << resultUser;
 
             // determines if the input is valid
             } catch (std::invalid_argument) {
